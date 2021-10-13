@@ -18,7 +18,7 @@
 
     <script>
         window.onload = () => {                       
-            document.querySelector('a-text').setAttribute('gps-projected-entity-place', 'latitude: 52.286241; longitude: 10.538797;')
+            document.querySelector('a-text').setAttribute('gps-entity-place', 'latitude: 52.286241; longitude: 10.538797;')
         } 
     </script>
 </head>
@@ -29,9 +29,9 @@
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
       <a-text
         value="IGP"
-        look-at="[gps-projected-camera]"
+        look-at="[gps-camera]"
         scale="0.05 0.05 0.05"></a-text>
-      <a-camera gps-projected-camera rotation-reader> </a-camera>
+      <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>
