@@ -7,8 +7,8 @@
     <title>Document</title>
 
     <!--AR.js with Image Tracking + Location Based AR-->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-nft.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
     <a-scene
@@ -23,6 +23,8 @@
         gps-entity-place="latitude: 52.286119; longitude: 10.539254;"
       ></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
+
+      <a-box gps-projected-entity-place='latitude: 52.286241; longitude: 10.538797' material='color: red' scale='10 10 10'></a-box>
     </a-scene>
   </body>
 </html>
