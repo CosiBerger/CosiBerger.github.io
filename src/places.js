@@ -1,7 +1,10 @@
 window.onload = () => {
 
-    let places = staticLoadPlaces();
-    renderPlaces(places);
+    setTimeout(function(){
+        let places = staticLoadPlaces();
+        renderPlaces(places);
+    }, 1000)
+    
 };
 
 
