@@ -51,7 +51,7 @@
         <!--Bucht vorne-->
         <a-box color="red" gps-entity-place="latitude: 52.286238; longitude: 10.539351;" />
       
-        <a-camera gps-projected-camera="positionMinAccuracy:10;" rotation-reader > </a-camera>
+        <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1'  gps-camera="alert:true; positionMinAccuracy:10;" rotation-reader > </a-camera>
     </a-scene>
 
   </body>
