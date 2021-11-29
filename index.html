@@ -10,10 +10,23 @@
     <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <!-- <script src="src/places.js"></script> -->
+    <script src="src/places.js"></script>
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
+
+    <style>
+      .centered {
+          justify-content: center;
+          position: fixed;
+          bottom: 0%;
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 0px auto;
+          background-color: white;
+      }
+    </style>
 </head>
 <body style="margin: 0; overflow: hidden;">
 
@@ -23,9 +36,8 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;">
 
-        <a-camera gps-camera="alert:true; positionMinAccuracy:10;" rotation-reader > </a-camera>
-         <!--Parkplatz hinten-->
-         <a-box color="blue" gps-entity-place="latitude: 52.286244; longitude: 10.539000;" />
+        <!--Parkplatz hinten-->
+        <a-box color="blue" gps-entity-place="latitude: 52.286244; longitude: 10.539000;" />
 
         <!--Einfahrt-->
         <a-box color="yellow" gps-entity-place="latitude: 52.28607; longitude: 10.539344;" />
@@ -33,6 +45,10 @@
         <!--Bucht vorne-->
         <a-box color="red" gps-entity-place="latitude: 52.286238; longitude: 10.539351;" />
       
+        <a-camera gps-camera="alert:true; positionMinAccuracy:10;" rotation-reader > </a-camera>
     </a-scene>
+    <div class="centered">
+      <div id="alert">Text Text Text</div>
+  </div>
   </body>
 </html>
