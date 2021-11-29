@@ -10,7 +10,7 @@ window.onload = () => {
         alertDiv.innerHTML = pos.coords.latitude + ", " + pos.coords.longitude + ", " + pos.coords.accuracy;
         console.log(pos);
     }, function(error) {
-        alertDiv.innerHTML = error;
+        alertDiv.innerHTML = error.message;
     }, {});
     
 };
