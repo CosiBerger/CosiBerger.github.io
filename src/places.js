@@ -1,9 +1,9 @@
 window.onload = () => {
 
-    setTimeout(function(){
-        let places = staticLoadPlaces();
-        renderPlaces(places);
-    }, 1000)
+    // setTimeout(function(){
+    //     let places = staticLoadPlaces();
+    //     renderPlaces(places);
+    // }, 1000)
 
     const alertDiv = document.getElementById("alert");
     navigator.geolocation.watchPosition(function(pos) {
@@ -42,15 +42,17 @@ function renderPlaces(places) {
     places.forEach((place) => {
         const latitude = place.location.lat;
         const longitude = place.location.lng;
+        const gpsEntityPlace = 'latitude: '+latitude + ';longitude: '+ longitude + ';';
 
         // add place icon
-        const icon = document.createElement('a-image');
-        icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
+        const icon = document.createElement('a-text');
+        icon.setAttribute('gps-entity-place', gpsEntityPlace);
         icon.setAttribute('name', place.name);
-        icon.setAttribute('src', '../images/map-marker.png');
+        icon.setAttribute('value', place.name);
+        // icon.setAttribute('src', '../images/map-marker.png');
 
         // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
-        icon.setAttribute('scale', '20, 20');
+        icon.setAttribute('scale', '20 20 20');
 
         icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
 
