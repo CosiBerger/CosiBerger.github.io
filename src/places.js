@@ -1,9 +1,9 @@
 window.onload = () => {
 
-    // setTimeout(function(){
-    //     let places = staticLoadPlaces();
-    //     renderPlaces(places);
-    // }, 10000)
+    setTimeout(function(){
+        let places = staticLoadPlaces();
+        renderPlaces(places);
+    }, 1000)
 
     const alertDiv = document.getElementById("alert");
     navigator.geolocation.watchPosition(function(pos) {
