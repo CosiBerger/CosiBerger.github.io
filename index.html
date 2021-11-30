@@ -39,7 +39,7 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <div class="centered">
-      <div id="alert">Text Text Text</div>
+      <div id="alert">Text Text Start</div>
   </div>
     <!-- Location-based AR-->
     <a-scene
@@ -54,9 +54,9 @@
         <!-- <a-box color="yellow" gps-entity-place="latitude: 52.28607; longitude: 10.539344;" /> -->
 
         <!--Bucht vorne-->
-        <a-box color="red" gps-entity-place="latitude: 52.286238; longitude: 10.539351;"></a-box>
+        <a-box color="red" gps-entity-place="latitude: 52.286238; longitude: 10.539351;" scale="10 10 10"></a-box>
       
-        <a-camera gps-camera rotation-reader> </a-camera>
+        <a-camera arjs-look-controls="smoothingFactor: 0.05;" gps-camera="gpsMinDistance: 8;" rotation-reader> </a-camera>
     </a-scene>
 
   </body>
