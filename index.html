@@ -17,8 +17,6 @@
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
 
-    <script src="src/places.js"></script>
-
     <style>
       .centered {
           height: 20%;
@@ -53,9 +51,9 @@
         <a-box color="yellow" gps-entity-place="latitude: 52.28607; longitude: 10.539344;" />
 
         <!--Bucht vorne-->
-        <a-box color="red" gps-entity-place="latitude: 52.286238; longitude: 10.539351;" />
+        <a-box color="red" position="1 1 1" />
       
-        <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera="positionMinAccuracy:8;" rotation-reader> </a-camera>
+        <a-camera  gps-camera rotation-reader> </a-camera>
     </a-scene>
 
   </body>
