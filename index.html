@@ -17,6 +17,8 @@
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
 
+    <script src="src/airbus.js"></script>
+
     <style>
       .centered {
           height: 20%;
@@ -36,7 +38,7 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <div class="centered">
-      <div id="alert">Text Text SuperNeu</div>
+      <div id="alert">Text TextGanz SuperNeu</div>
   </div>
     <!-- Location-based AR-->
     <a-scene
@@ -46,10 +48,10 @@
 
         <!-- <a-box color="red" position="10 1 10" /> -->
 
-        <a-entity id="a380" gltf-model="models\a380.gltf" position="0 0 -10" scale="0.05 0.05 0.05" rotation="0 180 0">
-        </a-entity>
+        <!-- <a-entity id="a380" gltf-model="models\a380.gltf" position="0 0 -10" scale="0.05 0.05 0.05" rotation="0 180 0">
+        </a-entity> -->
 
-        <a-camera gps-camera rotation-reader> </a-camera>
+        <a-camera gps-projected-camera rotation-reader> </a-camera>
     </a-scene>
 
   </body>
