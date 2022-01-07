@@ -47,9 +47,10 @@
 
         <a-box color="red" position="10 1 10" />
 
-        <a-entity id="walker" gltf-model="models\a380.gltf" position="0 0 -5" scale="0.1 0.1 0.1" >
-        </a-entity>
-      
+        <a-anchor hit-testing-enabled='true'>
+          <a-entity id="a380" gltf-model="models\a380.gltf" position="0 0 -10" scale="0.05 0.05 0.05" rotation="0 180 0">
+          </a-entity>
+        </a-anchor>
         <a-entity camera></a-entity>
     </a-scene>
 
