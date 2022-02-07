@@ -1,107 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Document</title>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leaflet</title>
 
-    <!--AR.js with Marker Based-->  
-    <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script> 
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="src/gesture-detector.js"></script>
-    <script src="src/gesture-handler.js"></script>
-    
-    <!--AR.js with Image Tracking-->
-    <!-- <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script> 
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
+        <!--Leaflet einbinden-->
+        <link rel="stylesheet" href="libs/leaflet/leaflet.css">
+        <script src="libs/leaflet/leaflet-src.js"></script>
 
-    <!-- style for the loader -->
-    <style>
-      .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+        <!--Eigene CSS Datei einbinden-->
+        <link rel="stylesheet" href="css/style.css">
 
-      .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-      }
-    </style>
-</head>
-<body style="margin: 0; overflow: hidden;">
-    <!-- Image-based Tracking-->
-    <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-    <!-- <div class="arjs-loader">
-      <div>Loading, please wait...</div>
-    </div>
+        <!--GPS Button Plugin-->
+        <script src="libs/gps-button/gps-button.js"></script>
+        <link rel="stylesheet" href="libs/gps-button/gps-button.css">
+    </head>
+    <body>
 
-    <a-scene
-        vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
-        embedded
-        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-nft
-            type="nft"
-            url="/images/city"
-            smooth="true"
-            smoothCount="10"
-            smoothTolerance=".01"
-            smoothThreshold="5">
+        <!--Element an dem die Karte eingehaengt wird-->
+        <div id="map" class="map"></div>
+    </body>
 
-            <a-entity
-                gltf-model="models/a380.gltf"
-                scale="5 5 5"
-                position="0 0 0">
-            </a-entity>
-        </a-nft>
-        <a-entity camera></a-entity>
-    </a-scene> -->
-
-    <!-- Marker-based Tracking -->
-    <a-scene embedded gesture-detector arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-        <a-marker preset="hiro">
-          <a-entity
-            position="0 0 0"
-            scale="0.05 0.05 0.05"
-            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-          ></a-entity>
-        </a-marker>
-
-        <a-marker type='barcode' value='6'>
-            <a-box position='0 1.5 0' color="yellow"></a-box>
-        </a-marker>
-
-        <!-- <a-marker  type='barcode' value='6'>
-            <a-entity
-                position="0 0 0"
-                scale="0.05 0.05 0.05"
-                gltf-model="models/a380.gltf"
-                class="clickable"
-                gesture-handler
-          ></a-entity>
-        </a-marker> -->
-        
-        <a-marker  type='barcode' value='7'>
-            <a-entity
-                position="0 0 0"
-                scale="0.05 0.05 0.05"
-                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-                class="clickable"
-                gesture-handler="minScale: 0.05; maxScale: 3"
-          ></a-entity>
-        </a-marker>
-
-        <a-entity camera></a-entity>
-      </a-scene>
-  </body>
+    <!--Eigene JS Datei einbinden-->
+    <script src="src/map.js"></script>
 </html>
