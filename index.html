@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>Document</title>
 
-    <!--AR.js with Marker Based-->  
+    <!--AR.js libs-->  
     <script src="libs/aframe_1.0.4.min.js"></script> 
     <script src="libs/aframe-ar.js"></script>
+
+    <!--Additional scripts to allow the detection of gestures to resize and rotate the displayed models-->
     <script src="src/gesture-detector.js"></script>
     <script src="src/gesture-handler.js"></script>
 
@@ -16,32 +18,39 @@
 <body style="margin: 0; overflow: hidden;">
 
     <!-- Marker-based Tracking -->
-    <a-scene embedded gesture-detector arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5;'>
+    <!--
+      The parameter matrixCodeType defines what kind of barcode markers can be used in the scene. Possible are the values: 3x3, 3x3_HAMMING63, 
+      3x3_PARITY65, 4x4, 4x4_BCH_13_9_3, 4x4_BCH_13_5_5. Right now, this scene only supports simple 3x3 markers. To see the seconde marker 5x5 (BCH (13,5,5) 
+      with value 15 in the scene, the parameter needs to be adjusted. The simultaneous use of markers with different dimensions  is not applicable.
+    -->
+    <a-scene embedded gesture-detector arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
         
-       <!-- Default Hiro Marker-->
+       <!-- Default Hiro marker-->
        <a-marker preset="hiro">
           <a-entity
             position="0 0 0"
             scale="0.05 0.05 0.05"
-            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+            gltf-model="models/duck.gltf"
           ></a-entity>
         </a-marker>
 
-        <!-- Barcode Marker with Value 6,  low Hemming Distance (1)-->
+        <!-- Barcode marker 3x3 with value 6, Hamming distance of 1-->
         <a-marker type='barcode' value='6'>
             <a-box position='0 1.5 0' color="yellow"></a-box>
         </a-marker>
 
+        <!-- Barcode marker 5x5 (BCH (13,5,5) with value 15, Hamming Distance of 5-->
         <a-marker  type='barcode' value='15'>
           <a-entity
               position="0 0 0"
               scale="0.05 0.05 0.05"
-              gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+              gltf-model="models/duck.gltf"
               class="clickable"
               gesture-handler="minScale: 0.05; maxScale: 3"
-        ></a-entity>
-      </a-marker>
+          ></a-entity>
+        </a-marker>
 
+        <!-- Pattern marker with the logo of the TU Braunschweig-->
         <a-marker  type='pattern' url='marker/pattern-tu_bs_logo.patt'>
             <a-entity
                 position="0 0 0"
