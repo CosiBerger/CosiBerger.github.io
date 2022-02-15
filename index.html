@@ -16,8 +16,10 @@
 <body style="margin: 0; overflow: hidden;">
 
     <!-- Marker-based Tracking -->
-    <a-scene embedded gesture-detector arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-        <a-marker preset="hiro">
+    <a-scene embedded gesture-detector arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5;'>
+        
+       <!-- Default Hiro Marker-->
+       <a-marker preset="hiro">
           <a-entity
             position="0 0 0"
             scale="0.05 0.05 0.05"
@@ -25,9 +27,20 @@
           ></a-entity>
         </a-marker>
 
+        <!-- Barcode Marker with Value 6,  low Hemming Distance (1)-->
         <a-marker type='barcode' value='6'>
             <a-box position='0 1.5 0' color="yellow"></a-box>
         </a-marker>
+
+        <a-marker  type='barcode' value='15'>
+          <a-entity
+              position="0 0 0"
+              scale="0.05 0.05 0.05"
+              gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+              class="clickable"
+              gesture-handler="minScale: 0.05; maxScale: 3"
+        ></a-entity>
+      </a-marker>
 
         <a-marker  type='pattern' url='marker/pattern-tu_bs_logo.patt'>
             <a-entity
@@ -39,16 +52,6 @@
           ></a-entity>
         </a-marker>
         
-        <a-marker  type='barcode' value='7'>
-            <a-entity
-                position="0 0 0"
-                scale="0.05 0.05 0.05"
-                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-                class="clickable"
-                gesture-handler="minScale: 0.05; maxScale: 3"
-          ></a-entity>
-        </a-marker>
-
         <a-entity camera></a-entity>
       </a-scene>
   </body>
