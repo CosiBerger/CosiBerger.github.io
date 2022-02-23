@@ -11,6 +11,6 @@
     background-image: url('./img/icon_camera.png');
 }
 
-.imageControl{
-    width:300px;
+.image{
+    max-width:200px;
 }
