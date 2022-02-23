@@ -1,83 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Image Recognition</title>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leaflet</title>
 
-    <!--AR.js libs-->
-    <script src="libs/aframe_1.0.4.min.js"></script> 
-    <script src="libs/aframe-ar-nft.js"></script>
+        <!--Eigene CSS Datei einbinden-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- <div style="width:100%; height: 100%">
+            <div id="takePhoto" class="photo-button">
+                <div class="circle"></div>
+                <div class="ring"></div>
+            </div>
 
-    <!-- style for the loader -->
-    <style>
-      .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+            <video id="video" autoplay>  
+            </video>
+        </div> -->
+        <label for="camera">
+            <input id="camera" type="file" accept="image/*" capture="environment">
+            camera
+        </label>
 
-      .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-      }
-    </style>
-</head>
-<body style="margin: 0; overflow: hidden;">
-    
-    <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-    <div class="arjs-loader">
-      <div>Loading, please wait...</div>
-    </div>
-
-    <!-- Image-based Tracking-->
-    <a-scene
-        vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
-        embedded
-        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <!-- <button id="takePhoto">Take Photo</button> -->
         
-        <!-- Recognition of the city image; displays the a380 model-->
-        <a-nft
-            type="nft"
-            url="/images/city"
-            smooth="true"
-            smoothCount="10"
-            smoothTolerance=".01"
-            smoothThreshold="5">
-
-            <a-entity
-                gltf-model="models/a380.gltf"
-                scale="3 3 3"
-                position="0 0 0">
-            </a-entity>
-        </a-nft>
-
-        <!-- Recognition of the world image; displays the duck model-->
-        <a-nft
-            type="nft"
-            url="/images/world"
-            smooth="true"
-            smoothCount="10"
-            smoothTolerance=".01"
-            smoothThreshold="5">
-
-            <a-entity
-                gltf-model="models/duck.gltf"
-                scale="25 25 25"
-                position="0 0 0">
-            </a-entity>
-        </a-nft>
-        <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+        <!-- <button id="openCamera">Open Camera</button>
+        <img id="image" src=""> -->
+        
+        
+        
+    </body>
+    <script src="src/camera.js"></script>
 </html>
