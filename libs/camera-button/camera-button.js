@@ -31,9 +31,14 @@ L.Control.CameraButton = L.Control.extend({
 
         this.imageControl = L.control({position: 'bottomleft'})
         this.imageControl.onAdd = function() {
+
+            const div = document.createElement("div");
+            div.classList.add("imageContainer");
             this.imageDiv = document.createElement("img");
             this.imageDiv.classList.add("image");
-            return this.imageDiv;
+
+            div.appendChild(this.imageDiv);
+            return div;
         }.bind(this);
         this.imageControl.addTo(map);
 
