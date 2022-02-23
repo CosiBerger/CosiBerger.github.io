@@ -1,18 +1,12 @@
-const video = document.getElementById("video");
-const image = document.getElementById("image");
-const takePhotoButton = document.getElementById("takePhoto");
-const canvas = document.createElement("canvas");
+const image = document.getElementById("photo");
+const input = document.getElementById("camera");
 
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then(mediaStream => {
-    // Do something with the stream.
-    video.srcObject = mediaStream;
-});
+input.addEventListener("change" , function() {
+    const file = input.files[0];
+    const reader = new FileReader();
 
-takePhotoButton.addEventListener("click", function() {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext("2d").drawImage(video, 0, 0);
-    // Other browsers will fall back to image/png
-    image.src = canvas.toDataURL("image/webp");
+    reader.addEventListener("load", function(event) {
+        image.src = event.target.result;
+    });
+    reader.readAsDataURL(file);
 })

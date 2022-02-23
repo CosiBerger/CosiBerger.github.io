@@ -6,31 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Leaflet</title>
 
+        <!--Leaflet einbinden-->
+        <link rel="stylesheet" href="libs/leaflet/leaflet.css">
+        <script src="libs/leaflet/leaflet-src.js"></script>
+
         <!--Eigene CSS Datei einbinden-->
         <link rel="stylesheet" href="css/style.css">
+
+        <!--GPS Button Plugin-->
+        <script src="libs/gps-button/gps-button.js"></script>
+        <link rel="stylesheet" href="libs/gps-button/gps-button.css">
+
+        <!--Camera Button Plugin-->
+        <script src="libs/camera-button/camera-button.js"></script>
+        <link rel="stylesheet" href="libs/camera-button/camera-button.css">
     </head>
     <body>
-        <!-- <div style="width:100%; height: 100%">
-            <div id="takePhoto" class="photo-button">
-                <div class="circle"></div>
-                <div class="ring"></div>
-            </div>
-
-            <video id="video" autoplay>  
-            </video>
-        </div> -->
-        <label for="camera">
-            <input id="camera" type="file" accept="image/*" capture="environment">
-            camera
-        </label>
-
-        <!-- <button id="takePhoto">Take Photo</button> -->
-        
-        <!-- <button id="openCamera">Open Camera</button>
-        <img id="image" src=""> -->
-        
-        
-        
+        <!--Element an dem die Karte eingehaengt wird-->
+        <div id="map" class="map"></div>
     </body>
-    <script src="src/camera.js"></script>
+    <script src="src/map.js"></script>
 </html>
