@@ -47,15 +47,13 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;">
 
-        <!--IGP gegenueber der Tür-->
-        <a-box color="blue" gps-entity-place="latitude: 52.286171; longitude: 10.539318;" />
+        <!--IGP gegenueber der Seitentür-->
+        <a-image gps-entity-place="latitude: 52.286171; longitude: 10.539318;" src="./images/map-marker.png"></a-image>
 
         <!--Einfahrt-->
-        <!-- <a-box color="yellow" gps-entity-place="latitude: 52.28607; longitude: 10.539344;" /> -->
-
         <a-image gps-entity-place="latitude: 52.28607; longitude: 10.539344;" src="./images/map-marker.png"></a-image>
-      
-        <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera="positionMinAccuracy: 10; alert: true; gpsTimeInterval: 1000; maxDistance: 40" rotation-reader> </a-camera>
+
+        <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera="positionMinAccuracy: 10; alert: true; gpsTimeInterval: 1000; maxDistance: 40; gpsMinDistance: 2;" rotation-reader> </a-camera>
     </a-scene>
 
   </body>
