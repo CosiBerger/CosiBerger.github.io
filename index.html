@@ -1,60 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Location-based Tracking</title>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multimedia</title>
 
-     <!-- Location Based AR-->
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    
-   <script>
-        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
+        <!--Eigene CSS Datei einbinden-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-    <script src="src/places.js"></script>
+    <body>
+        <!-- Oeffnet das Dateisystem, damit eine Datei ausgewaehlt werden kann
+        <label for="photoUpload">Neues Foto hochladen:</label><br>
+        <input type="file" id="photoUpload" accept="image/*"><br><br>-->
 
-    <style>
-      .centered {
-          height: 20%;
-          justify-content: center;
-          position: fixed;
-          bottom: 0%;
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          margin: 0px auto;
-          left: 0;
-          right: 0;
-          font-size: large;
-          color: white;
-      }
-    </style>
-</head>
-  <body style="margin: 0; overflow: hidden;">
-    
-    <!-- Displays the current position of the device-->
-    <div class="centered">
-      <div id="alert">Current Position</div>
-    </div>
+        <!-- Oeffnet die Kamera auf einem mobilen Gerät zur Aufnahme eines neuen Fotos-->
+        <!-- <label for="photoCapture">Neues Foto aufnehmen:</label><br>
+        <input type="file" id="photoCapture" accept="image/*" capture><br> -->
 
-    <!-- AR Scene-->
-    <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;">
 
-        <!--IGP gegenueber der Seitentür-->
-        <a-image gps-entity-place="latitude: 52.286171; longitude: 10.539318;" src="./images/map-marker.png"></a-image>
+        <!-- Oeffnet die Kamera, die zum Benutzer zeigt (Selfie-Kamera), für die Aufnahme eines neuen Fotos-->
+        <!-- <label for="photoCapture">Selfie-Kamera nutzen:</label><br>
+        <input type="file" id="photoCapture" capture="user" accept="image/*"><br> -->
 
-        <!--Einfahrt-->
-        <a-image gps-entity-place="latitude: 52.28607; longitude: 10.539344;" src="./images/map-marker.png"></a-image>
+        <!-- Oeffnet die Kamera, die nach vorne zeigt, für die Aufnahme eines neuen Fotos-->
+        <!-- <label for="photoCapture">Vordere Kamera nutzen :</label><br>
+        <input type="file" id="photoCapture" capture="environment" accept="image/*"><br> -->
 
-        <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera="positionMinAccuracy: 10; alert: true; gpsTimeInterval: 1000; maxDistance: 40; gpsMinDistance: 2;" rotation-reader> </a-camera>
-    </a-scene>
+        <!-- Vorlesungsvideo einbinden-->
+        <!-- <video width="320" height="240" controls>
+            <source src="video/vorlesung_1_datenbanken.mp4" type="video/mp4">
+            Der Browser unterstützt nicht die Anzeige eines Videos!
+        </video> -->
 
-  </body>
+        <!-- Tonspur der Vorlesung einbinden-->
+        <!-- <audio controls>
+            <source src="audio/vorlesung_1_datenbanken.mp3" type="audio/mp3">
+          Der Browser unterstützt nicht das Abspielen einer Tonspur!
+        </audio><br/> -->
+
+        <!-- Bilde darstellen-->
+        <img src="image/miniprojekt_screenshot_berger.png" width="500px"><br>
+        
+        <!-- Button zum Teilen des Bildes-->
+        <button id="shareButton">Bild Teilen</button>
+
+    </body>
+
+    <!--Eigene JS Datei einbinden-->
+    <script src="src/map.js"></script>
 </html>
