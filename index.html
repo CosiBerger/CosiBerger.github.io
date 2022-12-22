@@ -1,53 +1,33 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Multimedia</title>
+        <title>IGP Christmas Special</title>
+        <link rel="stylesheet" href="./css/style.css" />
 
-        <!--Eigene CSS Datei einbinden-->
-        <link rel="stylesheet" href="css/style.css">
+        <!--Leaflet einbinden-->
+        <link rel="stylesheet" href="./libs/leaflet/leaflet.css" />
+        <script src="./libs/leaflet/leaflet-src.js"></script>
+
+        <!--MovingMarker Leaflet Plugin einbinden-->
+        <script src="libs/Leaflet.MovingMarker/MovingMarker.js"></script>
+
+        <!--Leaflet.Snow Plugin einbinden-->
+        <script src="libs/Leaflet.Snow/L.Snow.js"></script>
     </head>
-
     <body>
-        <!-- Oeffnet das Dateisystem, damit eine Datei ausgewaehlt werden kann
-        <label for="photoUpload">Neues Foto hochladen:</label><br>
-        <input type="file" id="photoUpload" accept="image/*"><br><br>-->
+        <!--Gewinner/Verlierer Banner-->
+        <div id="banner" class="winner-banner center hide"></div>
 
-        <!-- Oeffnet die Kamera auf einem mobilen Gerät zur Aufnahme eines neuen Fotos-->
-        <!-- <label for="photoCapture">Neues Foto aufnehmen:</label><br>
-        <input type="file" id="photoCapture" accept="image/*" capture><br> -->
+        <!--Timer-->
+        <div id="timer" class="base-timer"></div>
 
-
-        <!-- Oeffnet die Kamera, die zum Benutzer zeigt (Selfie-Kamera), für die Aufnahme eines neuen Fotos-->
-        <!-- <label for="photoCapture">Selfie-Kamera nutzen:</label><br>
-        <input type="file" id="photoCapture" capture="user" accept="image/*"><br> -->
-
-        <!-- Oeffnet die Kamera, die nach vorne zeigt, für die Aufnahme eines neuen Fotos-->
-        <!-- <label for="photoCapture">Vordere Kamera nutzen :</label><br>
-        <input type="file" id="photoCapture" capture="environment" accept="image/*"><br> -->
-
-        <!-- Vorlesungsvideo einbinden-->
-        <!-- <video width="320" height="240" controls>
-            <source src="video/vorlesung_1_datenbanken.mp4" type="video/mp4">
-            Der Browser unterstützt nicht die Anzeige eines Videos!
-        </video> -->
-
-        <!-- Tonspur der Vorlesung einbinden-->
-        <!-- <audio controls>
-            <source src="audio/vorlesung_1_datenbanken.mp3" type="audio/mp3">
-          Der Browser unterstützt nicht das Abspielen einer Tonspur!
-        </audio><br/> -->
-
-        <!-- Bilde darstellen-->
-        <img src="image/miniprojekt_screenshot_berger.png" width="500px"><br>
-        
-        <!-- Button zum Teilen des Bildes-->
-        <button id="shareButton">Bild Teilen</button>
-
+        <!--Die Karte-->
+        <div id="map" class="map"></div>
+       
+        <!-- Alle relevanten JavaScript Dateien einbinden-->
+        <script src="./src/events.js"></script>
+        <script src="./src/timer.js"></script>
+        <script src="./src/map.js"></script>
     </body>
-
-    <!--Eigene JS Datei einbinden-->
-    <script src="src/map.js"></script>
 </html>
